@@ -1,4 +1,8 @@
 import { createStore } from 'redux';
+import {
+  ADD_DRINK,
+  addDrink
+} from './actions/lunchActions';
 
 const initialState = {
   drink: null,
@@ -8,7 +12,7 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch(action.type) {
-    case 'ADD_DRINK':
+    case ADD_DRINK:
       return { ...state, drink: action.payload };
     case 'ADD_CHIPS':
       return { ...state, chips: action.payload };
@@ -29,10 +33,7 @@ function reducer(state = initialState, action) {
 
 const store = createStore(reducer);
 
-store.dispatch({
-  type: 'ADD_DRINK',
-  payload: 'Purple Fanta'
-});
+store.dispatch(addDrink('Purple Fanta'));
 
 console.log('added drink', store.getState());
 
