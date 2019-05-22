@@ -70,3 +70,7 @@ store.dispatch({
 });
 
 console.log('removed sandwich', store.getState());
+
+store.dispatch({
+  type: 'REMOVE_ALL'
+});
