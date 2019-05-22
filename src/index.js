@@ -11,7 +11,9 @@ import {
   REMOVE_CHIPS,
   removeChips,
   REMOVE_SANDWICH,
-  removeSandwich
+  removeSandwich,
+  REMOVE_ALL,
+  removeAll
 } from './actions/lunchActions';
 
 const initialState = {
@@ -34,7 +36,7 @@ function reducer(state = initialState, action) {
       return { ...state, chips: null };
     case REMOVE_SANDWICH:
       return { ...state, sandwich: null };
-    case 'REMOVE_ALL':
+    case REMOVE_ALL:
       return initialState;
     default:
       return state;
@@ -67,6 +69,4 @@ store.dispatch(removeSandwich('Club'));
 
 console.log('removed sandwich', store.getState());
 
-store.dispatch({
-  type: 'REMOVE_ALL'
-});
+store.dispatch(removeAll());

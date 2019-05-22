@@ -33,3 +33,8 @@ export const removeSandwich = sandwich => ({
   type: REMOVE_SANDWICH,
   payload: sandwich
 });
+
+export const REMOVE_ALL = 'REMOVE_ALL';
+export const removeAll = () => ({
+  type: REMOVE_ALL
+});
