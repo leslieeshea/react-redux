@@ -10,3 +10,8 @@ export const addChips = chips => ({
   payload: chips
 });
 
+export const ADD_SANDWICH = 'ADD_SANDWICH';
+export const addSandwich = sandwich => ({
+  type: ADD_SANDWICH,
+  payload: sandwich
+});

@@ -3,7 +3,9 @@ import {
   ADD_DRINK,
   addDrink,
   ADD_CHIPS,
-  addChips
+  addChips,
+  ADD_SANDWICH,
+  addSandwich
 } from './actions/lunchActions';
 
 const initialState = {
@@ -18,7 +20,7 @@ function reducer(state = initialState, action) {
       return { ...state, drink: action.payload };
     case ADD_CHIPS:
       return { ...state, chips: action.payload };
-    case 'ADD_SANDWICH':
+    case ADD_SANDWICH:
       return { ...state, sandwich: action.payload };
     case 'REMOVE_DRINK':
       return { ...state, drink: null };
@@ -43,10 +45,7 @@ store.dispatch(addChips('BBQ'));
 
 console.log('added chips', store.getState());
 
-store.dispatch({
-  type: 'ADD_SANDWICH',
-  payload: 'Tuna'
-});
+store.dispatch(addSandwich('Club'));
 
 console.log('added sandwich', store.getState());
 
