@@ -20,6 +20,8 @@ function reducer(state = initialState, action) {
       return { ...state, chips: null };
     case 'REMOVE_SANDWICH':
       return { ...state, sandwich: null };
+    case 'REMOVE_ALL':
+      return initialState;
     default:
       return state;
   }
