@@ -14,6 +14,8 @@ function reducer(state = initialState, action) {
       return { ...state, chips: action.payload };
     case 'ADD_SANDWICH':
       return { ...state, sandwich: action.payload };
+    case 'REMOVE_DRINK':
+      return { ...state, drink: null };
     default:
       return state;
   }
@@ -41,3 +43,10 @@ store.dispatch({
 });
 
 console.log('added sandwich', store.getState());
+
+store.dispatch({
+  type: 'REMOVE_DRINK',
+  payload: 'Purple Fanta'
+});
+
+console.log('removed drink', store.getState());
