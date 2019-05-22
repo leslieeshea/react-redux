@@ -10,6 +10,8 @@ function reducer(state = initialState, action) {
   switch(action.type) {
     case 'ADD_DRINK':
       return { ...state, drink: action.payload };
+    case 'ADD_CHIPS':
+      return { ...state, chips: action.payload };
     default:
       return state;
   }
@@ -23,3 +25,8 @@ store.dispatch({
 });
 
 console.log('added drink', store.getState());
+
+store.dispatch({
+  type: 'ADD_CHIPS',
+  payload: 'Sour Cream & Onion'
+});
