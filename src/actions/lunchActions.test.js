@@ -4,7 +4,9 @@ import {
   ADD_CHIPS,
   addChips,
   addSandwich,
-  ADD_SANDWICH
+  ADD_SANDWICH,
+  REMOVE_DRINK,
+  removeDrink
 } from './lunchActions';
 
 describe('Lunch Actions', () => {
@@ -26,6 +28,13 @@ describe('Lunch Actions', () => {
     expect(addSandwich('chipotle')).toEqual({
       type: ADD_SANDWICH,
       payload: 'chipotle'
+    });
+  });
+
+  it('can remove a drink', () => {
+    expect(removeDrink('coke')).toEqual({
+      type: REMOVE_DRINK,
+      payload: 'coke'
     });
   });
 });
