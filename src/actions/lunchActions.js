@@ -27,3 +27,9 @@ export const removeChips = chips => ({
   type: REMOVE_CHIPS,
   payload: chips
 });
+
+export const REMOVE_SANDWICH = 'REMOVE_SANDWICH';
+export const removeSandwich = sandwich => ({
+  type: REMOVE_SANDWICH,
+  payload: sandwich
+});

@@ -9,7 +9,9 @@ import {
   REMOVE_DRINK,
   removeDrink,
   REMOVE_CHIPS,
-  removeChips
+  removeChips,
+  REMOVE_SANDWICH,
+  removeSandwich
 } from './actions/lunchActions';
 
 const initialState = {
@@ -30,7 +32,7 @@ function reducer(state = initialState, action) {
       return { ...state, drink: null };
     case REMOVE_CHIPS:
       return { ...state, chips: null };
-    case 'REMOVE_SANDWICH':
+    case REMOVE_SANDWICH:
       return { ...state, sandwich: null };
     case 'REMOVE_ALL':
       return initialState;
@@ -61,10 +63,7 @@ store.dispatch(removeChips('BBQ'));
 
 console.log('removed chips', store.getState());
 
-store.dispatch({
-  type: 'REMOVE_SANDWICH',
-  payload: 'Tuna'
-});
+store.dispatch(removeSandwich('Club'));
 
 console.log('removed sandwich', store.getState());
 
