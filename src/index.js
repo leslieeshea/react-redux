@@ -3,7 +3,9 @@ import {
   CREATE_POST,
   createPost,
   DELETE_POST,
-  deletePost
+  deletePost,
+  UPDATE_POST,
+  updatePost
 } from './actions/postActions';
 
 const initialState = {
@@ -18,6 +20,8 @@ function reducer(state = initialState, action) {
       return { ...state, title: action.payload.title, body: action.payload.body };
     case DELETE_POST:
       return { ...state, id: action.payload };
+    case UPDATE_POST:
+      return { ...state, id: action.payload.id, body: action.payload.body };
     default:
       return state;
   }
@@ -32,3 +36,7 @@ console.log('added new post', store.getState());
 store.dispatch(deletePost(0));
 
 console.log('deleted post', store.getState());
+
+store.dispatch(updatePost(0, 'my new body'));
+
+console.log('updated post', store.getState());
