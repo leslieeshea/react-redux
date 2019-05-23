@@ -1,49 +1,16 @@
 import { createStore } from 'redux';
 import {
-  ADD_DRINK,
   addDrink,
-  ADD_CHIPS,
   addChips,
-  ADD_SANDWICH,
   addSandwich,
-  REMOVE_DRINK,
   removeDrink,
-  REMOVE_CHIPS,
   removeChips,
-  REMOVE_SANDWICH,
   removeSandwich,
-  REMOVE_ALL,
   removeAll
 } from './actions/lunchActions';
+import lunch from './reducers/lunchReducer';
 
-const initialState = {
-  drink: null,
-  chips: null,
-  sandwich: null
-};
-
-function reducer(state = initialState, action) {
-  switch(action.type) {
-    case ADD_DRINK:
-      return { ...state, drink: action.payload };
-    case ADD_CHIPS:
-      return { ...state, chips: action.payload };
-    case ADD_SANDWICH:
-      return { ...state, sandwich: action.payload };
-    case REMOVE_DRINK:
-      return { ...state, drink: null };
-    case REMOVE_CHIPS:
-      return { ...state, chips: null };
-    case REMOVE_SANDWICH:
-      return { ...state, sandwich: null };
-    case REMOVE_ALL:
-      return initialState;
-    default:
-      return state;
-  }
-}
-
-const store = createStore(reducer);
+const store = createStore(lunch);
 
 store.dispatch(addDrink('Coke'));
 
