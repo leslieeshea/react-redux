@@ -1,8 +1,39 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './components/App';
+import { createStore } from 'redux';
+import {
+  addDrink,
+  addChips,
+  addSandwich,
+  removeDrink,
+  removeChips,
+  removeSandwich,
+  removeAll
+} from './actions/lunchActions';
+import lunchReducer from './reducers/lunchReducer';
 
-render(
-  <App />,
-  document.getElementById('root')
-);
+const store = createStore(lunchReducer);
+
+store.dispatch(addDrink('Coke'));
+
+console.log('added drink', store.getState());
+
+store.dispatch(addChips('BBQ'));
+
+console.log('added chips', store.getState());
+
+store.dispatch(addSandwich('Club'));
+
+console.log('added sandwich', store.getState());
+
+store.dispatch(removeDrink('Coke'));
+
+console.log('removed drink', store.getState());
+
+store.dispatch(removeChips('BBQ'));
+
+console.log('removed chips', store.getState());
+
+store.dispatch(removeSandwich('Club'));
+
+console.log('removed sandwich', store.getState());
+
+store.dispatch(removeAll());
