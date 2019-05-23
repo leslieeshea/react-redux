@@ -8,9 +8,9 @@ import {
   removeSandwich,
   removeAll
 } from './actions/lunchActions';
-import lunch from './reducers/lunchReducer';
+import lunchReducer from './reducers/lunchReducer';
 
-const store = createStore(lunch);
+const store = createStore(lunchReducer);
 
 store.dispatch(addDrink('Coke'));
 
