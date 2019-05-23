@@ -9,7 +9,7 @@ import {
 const initialState = {
   title: null,
   body: null,
-  id: null
+  id: 0
 };
 
 function reducer(state = initialState, action) {
@@ -29,6 +29,6 @@ store.dispatch(createPost('hello there', 'this is my blog'));
 
 console.log('added new post', store.getState());
 
-store.dispatch(deletePost());
+store.dispatch(deletePost(0));
 
 console.log('deleted post', store.getState());
