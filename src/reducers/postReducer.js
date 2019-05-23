@@ -1,5 +1,7 @@
 import {
-  CREATE_POST, DELETE_POST, UPDATE_POST
+  CREATE_POST,
+  DELETE_POST,
+  UPDATE_POST
 } from '../actions/postActions';
 
 const initialState = [];
