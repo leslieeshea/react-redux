@@ -8,6 +8,8 @@ describe('Comment Selectors', () => {
       }
     };
 
-    expect(getComments(state, 1)).toEqual(['first comment', 'second comment']);
+    expect(getComments(state, 1)).toEqual(
+      ['first comment', 'second comment']
+    );
   });
 });
