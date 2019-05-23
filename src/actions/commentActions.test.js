@@ -1,6 +1,8 @@
 import {
   createComment,
-  CREATE_COMMENT
+  CREATE_COMMENT,
+  deleteComment,
+  DELETE_COMMENT
 } from './commentActions';
 
 describe('Comment Actions', () => {
@@ -10,6 +12,16 @@ describe('Comment Actions', () => {
       payload: {
         postId: 1,
         comment: 'this is my comment'
+      }
+    });
+  });
+
+  it('creates a deleteComment action', () => {
+    expect(deleteComment(1, 1)).toEqual({
+      type: DELETE_COMMENT,
+      payload: {
+        postId: 1,
+        commentId: 1
       }
     });
   });
