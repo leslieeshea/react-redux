@@ -3,6 +3,7 @@ import {
   createComment,
   deleteComment
 } from '../actions/commentActions';
+import { deletePost } from '../actions/postActions';
 
 describe('Comment Reducer', () => {
   it('handles the create comment action', () => {
@@ -31,6 +32,18 @@ describe('Comment Reducer', () => {
     const newState = commentReducer(initialState, deleteComment(1, 0));
     expect(newState).toEqual({
       1: ['another comment']
+    });
+  });
+
+  it('handles the delete post and comments action', () => {
+    const initialState = {
+      1: ['here is my comment', 'another comment'],
+      2: ['hello you']
+    };
+
+    const newState = commentReducer(initialState, deletePost(1));
+    expect(newState).toEqual({
+      2: ['hello you']
     });
   });
 });
