@@ -75,4 +75,20 @@ describe('Lunch Reducer', () => {
       { sandwich: null }
     );
   });
+
+  it('handles the removeAll action', () => {
+    const initialState = {
+      drink: 'coke',
+      chips: 'bbq',
+      sandwich: 'turkey'
+    };
+
+    const newState = lunchReducer(initialState, removeAll());
+    expect(newState).toEqual({
+      drink: null,
+      chips: null,
+      sandwich: null
+    }
+    );
+  });
 });
