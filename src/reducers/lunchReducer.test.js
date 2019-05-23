@@ -42,4 +42,15 @@ describe('Lunch Reducer', () => {
       { sandwich: 'turkey' }
     );
   });
+
+  it('handles the removeDrink action', () => {
+    const initialState = {
+      drink: 'coke'
+    };
+
+    const newState = lunchReducer(initialState, removeDrink('coke'));
+    expect(newState).toEqual(
+      { drink: null }
+    );
+  });
 });
