@@ -53,4 +53,15 @@ describe('Lunch Reducer', () => {
       { drink: null }
     );
   });
+
+  it('handles the removeChips action', () => {
+    const initialState = {
+      chips: 'bbq'
+    };
+
+    const newState = lunchReducer(initialState, removeChips('bbq'));
+    expect(newState).toEqual(
+      { chips: null }
+    );
+  });
 });
