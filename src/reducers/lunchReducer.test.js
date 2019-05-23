@@ -12,12 +12,23 @@ import {
 describe('Lunch Reducer', () => {
   it('handles the addDrink action', () => {
     const initialState = {
-      drink: null
+      drink: null,
     };
-    
+
     const newState = lunchReducer(initialState, addDrink('water'));
     expect(newState).toEqual(
       { drink: 'water' }
+    );
+  });
+
+  it('handles the addChips action', () => {
+    const initialState = {
+      chips: null
+    };
+    
+    const newState = lunchReducer(initialState, addChips('BBQ'));
+    expect(newState).toEqual(
+      { chips: 'BBQ' }
     );
   });
 });
