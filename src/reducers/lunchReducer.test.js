@@ -64,4 +64,15 @@ describe('Lunch Reducer', () => {
       { chips: null }
     );
   });
+
+  it('handles the removeSandwich action', () => {
+    const initialState = {
+      sandwich: 'turkey'
+    };
+
+    const newState = lunchReducer(initialState, removeSandwich('turkey'));
+    expect(newState).toEqual(
+      { sandwich: null }
+    );
+  });
 });
