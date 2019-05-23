@@ -1,5 +1,5 @@
 import {
-  CREATE_POST, DELETE_POST
+  CREATE_POST, DELETE_POST, UPDATE_POST
 } from '../actions/postActions';
 
 const initialState = [];
@@ -12,6 +12,15 @@ export default function postReducer(state = initialState, action) {
       return [
         ...state.slice(0, action.payload),
         ...state.slice(action.payload + 1)
+      ];
+    case UPDATE_POST:
+      return [
+        ...state.slice(0, action.payload.id),
+        {
+          ...state[action.payload.id],
+          body: action.payload.body
+        },
+        ...state.slice(action.payload.id + 1)
       ];
     default:
       return state;

@@ -1,7 +1,8 @@
 import postReducer from './postReducer';
 import {
   createPost,
-  deletePost
+  deletePost,
+  updatePost
 } from '../actions/postActions';
 
 describe('Post Reducer', () => {
@@ -22,6 +23,21 @@ describe('Post Reducer', () => {
     const newState = postReducer(initialState, deletePost(1));
     expect(newState).toEqual([
       { title: 'post one', body: 'hello' },
+      { title: 'post three', body: 'goodbye bye' }
+    ]);
+  });
+
+  it('handles the update post action', () => {
+    const initialState = [
+      { title: 'post one', body: 'hello' },
+      { title: 'post two', body: 'hello there' },
+      { title: 'post three', body: 'goodbye bye' }
+    ];
+
+    const newState = postReducer(initialState, updatePost(1, 'UPDATED'));
+    expect(newState).toEqual([
+      { title: 'post one', body: 'hello' },
+      { title: 'post two', body: 'UPDATED' },
       { title: 'post three', body: 'goodbye bye' }
     ]);
   });
