@@ -1,6 +1,4 @@
-import {
-  CREATE_COMMENT, DELETE_COMMENT
-} from '../actions/commentActions';
+import { CREATE_COMMENT, DELETE_COMMENT } from '../actions/commentActions';
 import { DELETE_POST } from '../actions/postActions';
 
 const deletePostAndComments = (state, id) => {
