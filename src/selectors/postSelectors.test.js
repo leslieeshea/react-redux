@@ -10,8 +10,8 @@ describe('Post Selectors', () => {
     };
 
     expect(getPosts(state)).toEqual([
-      { index: 0, title: 'my first post', body: 'first post body' },
-      { index: 1, title: 'my second post', body: 'second post body' }
+      { id: 0, title: 'my first post', body: 'first post body' },
+      { id: 1, title: 'my second post', body: 'second post body' }
     ]);
   });
 
@@ -24,7 +24,7 @@ describe('Post Selectors', () => {
     };
 
     expect(getPost(state, 0)).toEqual({
-      index: 0, title: 'my first post', body: 'first post body'
+      id: 0, title: 'my first post', body: 'first post body'
     });
   });
 });

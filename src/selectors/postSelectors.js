@@ -1,6 +1,6 @@
-export const getPosts = state => state.posts.map((post, index) => ({
+export const getPosts = state => state.posts.map((post, id) => ({
   ...post,
-  index
+  id
 }));
 
-export const getPost = (state, index) => getPosts(state)[index];
+export const getPost = (state, id) => getPosts(state)[id];
