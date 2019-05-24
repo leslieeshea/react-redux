@@ -17,7 +17,7 @@ describe('Post Selectors', () => {
 
   it('gets a post by index', () => {
     const state = {
-      post: [
+      posts: [
         { title: 'my first post', body: 'first post body' },
         { title: 'my second post', body: 'second post body' }
       ]
