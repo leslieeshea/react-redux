@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styles from './PostForm.css';
 
 export default class PostForm extends PureComponent {
   static propTypes = {
@@ -13,16 +14,21 @@ export default class PostForm extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    const { title, body } = this.state;
 
+    const { title, body } = this.state;
     this.props.onSubmit(title, body);
+    this.setState({ title: '', body: '' });
+  }
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
   }
 
   render() {
     const { title, body } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={styles.PostForm} onSubmit={this.handleSubmit}>
         <input name="title" value={title} onChange={this.handleChange} />
         <textarea name="body" value={body} onChange={this.handleChange}></textarea>
         <button>Submit</button>

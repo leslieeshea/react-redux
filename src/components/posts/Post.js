@@ -1,14 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-function Post({ post }) {
+function Post({ post, deletePost }) {
   return (
-    <p>{post.title}</p>
+    <>
+      <Link to={`/posts/${post.id}`}>
+        {post.title}
+      </Link>
+      <button onClick={deletePost.bind(null, post.id)}>Delete Post</button>
+    </>
   );
 }
 
 Post.propTypes = {
+  deletePost: PropTypes.func.isRequired,
   post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired
   }).isRequired
 };
